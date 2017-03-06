@@ -5,4 +5,4 @@ class Article(object):
         self.name = name
 
     def links(self):
-        return parser.Parser().get(self.name)
+        return list(parser.Parser().get(self.name))

@@ -19,7 +19,7 @@ class Parser:
         for word in bad_words:
             if url.find(word) != -1:
                 return False
-            return True
+        return True
 
     def get_url_from_name(self, name):
         return "https://en.wikipedia.org/wiki/" + name
@@ -32,7 +32,7 @@ class Parser:
         links = map(lambda ref: ref.get('href'), refs)
         links = filter(self.filter, links)
         for link in links:
-            print link.split('/')[2]
+            yield link.split('/')[2]
 
 
 #parser = Parser()
