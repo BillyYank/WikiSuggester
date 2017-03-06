@@ -7,16 +7,18 @@ from lxml import html
 import re
 
 
-def get_url_from_name(name):
-    return "https://en.wikipedia.org/wiki/" + name
+class Parser:
+    def get_url_from_name(self, name):
+        return "https://en.wikipedia.org/wiki/" + name
+    
+    def get(self, name):
+        url = self.get_url_from_name(name)
+        page = urllib2.urlopen(url).read()
+        soup = bs(page, 'html.parser')
+        refs = soup.findAll('a', href=re.compile('/wiki/*'))
+        for ref in refs:
+            print str(ref).split('/')[2].split("\"")[0]
 
 
-def get_links(name):
-    url = get_url_from_name(name)
-    page = urllib2.urlopen(url).read()
-    soup = bs(page, 'html.parser')
-    refs = soup.findAll('a', href=re.compile('/wiki/*'))
-    for ref in refs:
-        print ref
-
-get_links("John_Lennon")
+parser = Parser()
+parser.get("John_Lennon")
