@@ -1,3 +1,3 @@
 import ranking
 
-ranking.Ranker().getTop('Jon_Cash')
+ranking.Ranker().getTop('John_Cash')
