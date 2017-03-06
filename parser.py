@@ -20,5 +20,5 @@ class Parser:
             yield str(ref).split('/')[2].split("\"")[0]
 
 
-parser = Parser()
-parser.get("John_Lennon")
+#parser = Parser()
+#parser.get("John_Lennon")
