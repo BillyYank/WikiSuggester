@@ -17,7 +17,7 @@ class Parser:
         soup = bs(page, 'html.parser')
         refs = soup.findAll('a', href=re.compile('/wiki/*'))
         for ref in refs:
-            print str(ref).split('/')[2].split("\"")[0]
+            yield str(ref).split('/')[2].split("\"")[0]
 
 
 parser = Parser()
