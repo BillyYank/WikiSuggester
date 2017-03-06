@@ -21,8 +21,8 @@ class Parser:
                 return False
             return True
 
-def get_url_from_name(self, name):
-    return "https://en.wikipedia.org/wiki/" + name
+    def get_url_from_name(self, name):
+        return "https://en.wikipedia.org/wiki/" + name
     
     def get(self, name):
         url = self.get_url_from_name(name)
