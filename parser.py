@@ -35,5 +35,5 @@ def get_url_from_name(self, name):
             print link.split('/')[2]
 
 
-parser = Parser()
-parser.get("John_Lennon")
+#parser = Parser()
+#parser.get("John_Lennon")
