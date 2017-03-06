@@ -1,3 +1,4 @@
+import parser
 
 class Article(object):
     def __init__(self):
@@ -5,7 +6,7 @@ class Article(object):
 
     @classmethod
     def get(name):
-        pass
+        self.name = name
 
     def links(self):
-        return []
+        return parser.Parser().get(self.name)
